@@ -158,3 +158,8 @@ button:hover::before {
 .top {
     margin-top: 10%;
 }
+
+.descripcion {
+    margin-bottom: 28vw;
+    margin-left: 15vw;
+}
