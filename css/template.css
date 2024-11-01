@@ -39,7 +39,7 @@ a {
     font-size: 2em;
     
     position: absolute;
-    left: 2em;
+    left: 1.6em;
     bottom: 1.875em;
     font-weight: 400;
     color: #93ffa1;
@@ -82,6 +82,8 @@ a {
 .Flex{
     display: flex;
     flex-direction: row;
+    text-align: center;
+    align-items: center;
 }
 
 button {
