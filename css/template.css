@@ -4,8 +4,8 @@ a {
 
 .card {
     position: relative;
-    width: 11.875em;
-    height: 16.5em;
+    width: 30vw;
+    height: 40vw;
     box-shadow: 0px 1px 13px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     transition: all 120ms;
@@ -23,12 +23,12 @@ a {
     padding-left: 1.25em;
     position: absolute;
     left: 0;
-    transform: translateY(60px);
+    bottom: 60px;
     background: #05DA51;
     color: #050a11;
     height: 2.5em;
-    width: 90%;
-    transition: all 80ms;
+    width: 95%;
+    transition: all 80ms ease;
     font-weight: 600;
     text-transform: uppercase;
     visibility: hidden;
