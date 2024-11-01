@@ -23,6 +23,7 @@ header {
     align-items: center;
     padding: 28px 20%;
     transition: all 0.5s ease;
+    line-height: 100px;
 }
 
 .nav-menu ul {
@@ -46,9 +47,10 @@ header {
 
 .nav-menu>ul>li:hover {
     background: #05DA51;
-    transform: scale(1.5);
+    transform: scale(1);
     border-radius: 7px;
 }
+
 
 
 .footer {
