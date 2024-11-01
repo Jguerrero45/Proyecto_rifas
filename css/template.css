@@ -15,6 +15,7 @@ a {
     background: #e2e2e2;
     padding: 0.5em;
     padding-bottom: 3.4em;
+    border-radius: 3vw;
 }
 
 .card::after {
@@ -32,6 +33,7 @@ a {
     font-weight: 600;
     text-transform: uppercase;
     visibility: hidden;
+
 }
 
 .card .title {
@@ -43,6 +45,7 @@ a {
     font-weight: 400;
     color: #05DA51;
     text-shadow: #000 2px 2px 2px;
+
 }
 
 .card .price {
@@ -52,20 +55,24 @@ a {
     left: 85px;
     bottom: 0.625em;
     color: #0e131b;
+
 }
 
 .card:hover::after {
     transform: translateY(60px);
     visibility: visible;
+
 }
 
 .card:active {
     transform: scale(0.98);
+
 }
 
 .card:active::after {
     content: "Cargando ...";
     height: 3.125em;
+
 }
 
 .text {
@@ -78,6 +85,7 @@ a {
     height: 100%;
     display: grid;
     place-items: center;
+    border-radius: 3vw;
 }
 
 .Flex {
