@@ -11,8 +11,12 @@ body {
     color: white;
 }
 
+main {
+    margin-top: 20%;
+}
+
 header {
-    background-color: #222;
+    background-color: #1f1c1c;
     position: fixed;
     width: 100%;
     top: 0;
@@ -23,7 +27,8 @@ header {
     align-items: center;
     padding: 28px 20%;
     transition: all 0.5s ease;
-    line-height: 100px;
+    line-height: 50px;
+
 }
 
 .nav-menu ul {
@@ -33,6 +38,9 @@ header {
 
 .nav-menu li {
     margin-right: 16px;
+    background-color: #0BDA51;
+    border-radius: 15px;
+
 }
 
 .nav-menu li a {
@@ -43,12 +51,13 @@ header {
     padding: 5px 0;
     margin: 0 30px;
     transition: all 0.5s ease;
+
 }
 
 .nav-menu>ul>li:hover {
-    background: #05DA51;
+    background: #222;
     transform: scale(1);
-    border-radius: 7px;
+
 }
 
 
