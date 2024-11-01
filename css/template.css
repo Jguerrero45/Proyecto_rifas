@@ -41,8 +41,8 @@ a {
     font-family: 'Shrikhand', Arial, Helvetica, sans-serif;
     font-size: 2vw;
     position: absolute;
-    left: 11.5vw;
-    bottom: 0.275vw;
+    text-align: center;
+    bottom: 7.275vw;
     font-weight: 400;
     color: #05DA51;
     text-shadow: #000 2px 2px 2px;
@@ -161,5 +161,44 @@ button:hover::before {
 
 .descripcion {
     margin-bottom: 28vw;
-    margin-left: 15vw;
+    margin-left: 1vw;
+}
+.containerbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4vw;
+    width: 30vw;
+}
+  
+  .progress-bar__container {
+    width: 80%;
+    height: 2rem;
+    border-radius: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s;
+    will-change: transform;
+    box-shadow: 0 0 5px #e76f51;
+}
+  
+  .progress-bar {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    content: "";
+    background-color: #e76f51;
+    top:0;
+    bottom: 0;
+    left: -100%;
+    border-radius: inherit;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    color: white;
+    font-family: sans-serif;
+}
+  
+  .progress-bar__text {
+    display: none;
 }
