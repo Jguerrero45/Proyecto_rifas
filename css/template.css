@@ -41,8 +41,8 @@ a {
     font-family: 'Shrikhand', Arial, Helvetica, sans-serif;
     font-size: 2vw;
     position: absolute;
-    left: 11.5vw;
-    bottom: 0.275vw;
+    text-align: center;
+    bottom: 7.275vw;
     font-weight: 400;
     color: #05DA51;
     text-shadow: #000 2px 2px 2px;
