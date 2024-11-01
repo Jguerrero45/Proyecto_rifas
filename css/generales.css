@@ -12,7 +12,7 @@ body {
 }
 
 main {
-    margin-top: 20%;
+    margin-top: 10%;
 }
 
 header {
@@ -39,13 +39,13 @@ header {
 .nav-menu li {
     margin-right: 16px;
     background-color: #0BDA51;
-    border-radius: 15px;
+    border-radius: 100px;
 
 }
 
 .nav-menu li a {
     text-decoration: none;
-    color: #fff;
+    color: #faf1f1;
     font-size: 1.1rem;
     font-weight: 500;
     padding: 5px 0;
@@ -55,9 +55,7 @@ header {
 }
 
 .nav-menu>ul>li:hover {
-    background: #222;
-    transform: scale(1);
-
+    transform: scale(1.05);
 }
 
 

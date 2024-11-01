@@ -64,7 +64,7 @@ a {
 }
 
 .card:active::after {
-    content: "Added !";
+    content: "Cargando...";
     height: 3.125em;
 }
 
@@ -81,7 +81,7 @@ a {
 }
 
 .Flex {
-    margin-top: 7%;
+    margin-top: 2%;
     display: flex;
     flex-direction: row;
     text-align: center;
@@ -144,8 +144,5 @@ button:hover::before {
 
 .descripcion {
     margin-left: 5%;
-}
-
-.top {
-    margin-top: 10%;
+    margin-bottom: 15%;
 }
