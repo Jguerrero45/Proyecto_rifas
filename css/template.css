@@ -18,12 +18,12 @@ a {
 }
 
 .card::after {
-    content: "Comprar Boleto";
+    content: "Comprar Boletos";
     padding-top: 1.25em;
     padding-left: 1.25em;
     position: absolute;
     left: 0;
-    bottom: -60px;
+    transform: translateY(60px);
     background: #05DA51;
     color: #050a11;
     height: 2.5em;
@@ -31,7 +31,7 @@ a {
     transition: all 80ms;
     font-weight: 600;
     text-transform: uppercase;
-    opacity: 0;
+    visibility: hidden;
 }
 
 .card .title {
@@ -55,8 +55,8 @@ a {
 }
 
 .card:hover::after {
-    bottom: 0;
-    opacity: 1;
+    transform: translateY(60px);
+    visibility: visible;
 }
 
 .card:active {
@@ -64,7 +64,7 @@ a {
 }
 
 .card:active::after {
-    content: "Cargando...";
+    content: "Cargando ...";
     height: 3.125em;
 }
 
@@ -79,9 +79,8 @@ a {
     display: grid;
     place-items: center;
 }
-
 .Flex {
-    margin-top: 2%;
+    margin-top: 7%;
     display: flex;
     flex-direction: row;
     text-align: center;
@@ -144,5 +143,8 @@ button:hover::before {
 
 .descripcion {
     margin-left: 5%;
-    margin-bottom: 15%;
+}
+
+.top {
+    margin-top: 10%;
 }
