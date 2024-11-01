@@ -1,13 +1,12 @@
-<<<<<<< HEAD
 a {
     text-decoration: none;
 }
-=======
+
 .card {
     position: relative;
     width: 11.875em;
     height: 16.5em;
-    box-shadow: 0px 1px 13px rgba(0,0,0,0.1);
+    box-shadow: 0px 1px 13px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     transition: all 120ms;
     display: flex;
@@ -16,9 +15,9 @@ a {
     background: #fff;
     padding: 0.5em;
     padding-bottom: 3.4em;
-  }
-  
-  .card::after {
+}
+
+.card::after {
     content: "Add to Cart";
     padding-top: 1.25em;
     padding-left: 1.25em;
@@ -33,9 +32,9 @@ a {
     font-weight: 600;
     text-transform: uppercase;
     opacity: 0;
-  }
-  
-  .card .title {
+}
+
+.card .title {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 0.9em;
     position: absolute;
@@ -43,40 +42,85 @@ a {
     bottom: 1.875em;
     font-weight: 400;
     color: #000;
-  }
-  
-  .card .price {
+}
+
+.card .price {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 0.9em;
     position: absolute;
     left: 0.625em;
     bottom: 0.625em;
     color: #000;
-  }
-  
-  .card:hover::after {
+}
+
+.card:hover::after {
     bottom: 0;
     opacity: 1;
-  }
-  
-  .card:active {
+}
+
+.card:active {
     transform: scale(0.98);
-  }
-  
-  .card:active::after {
+}
+
+.card:active::after {
     content: "Added !";
     height: 3.125em;
-  }
-  
-  .text {
+}
+
+.text {
     max-width: 55px;
-  }
-  
-  .imageBoleto {
+}
+
+.imageBoleto {
     background: rgb(241, 241, 241);
     width: 100%;
     height: 100%;
     display: grid;
     place-items: center;
-  }
->>>>>>> 2d7d88254bc1863ed5e8b58b79b4eed42f9c4712
+}
+
+
+
+.nav-menu ul {
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu li {
+    margin-right: 1rem;
+    list-style: none;
+
+}
+
+.nav-menu li a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.nav-menu>ul>li :hover {
+    background: #4ad295;
+    padding: .25rem .75rem;
+    border-radius: .2rem;
+}
+
+.footer {
+    background: #222;
+    color: white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.social-icons {
+    font-size: 200%;
+    display: block;
+    justify-content: center;
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+    min-width: 400px;
+    justify-content: center;
+    text-align: center;
+    margin-top: 1vw;
+}
