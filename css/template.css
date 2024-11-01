@@ -12,7 +12,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #fff;
+    background: #e2e2e2;
     padding: 0.5em;
     padding-bottom: 3.4em;
 }
@@ -37,12 +37,12 @@ a {
 .card .title {
     font-family: 'Shrikhand', Arial, Helvetica, sans-serif;
     font-size: 2em;
-
     position: absolute;
     left: 1.6em;
     bottom: 1.875em;
     font-weight: 400;
-    color: #93ffa1;
+    color: #05DA51;
+    text-shadow: #000 2px 2px 2px;
 }
 
 .card .price {
@@ -79,6 +79,7 @@ a {
     display: grid;
     place-items: center;
 }
+
 .Flex {
     margin-top: 7%;
     display: flex;
@@ -91,7 +92,7 @@ button {
     outline: none;
     cursor: pointer;
     border: none;
-    padding: 0.9rem 2rem;
+    padding: 1rem 2rem;
     margin: 0;
     margin-left: 0.75rem;
     font-family: inherit;
