@@ -131,3 +131,7 @@ header {
 footer {
     font-family: none;
 }
+
+a {
+    color: white;
+}

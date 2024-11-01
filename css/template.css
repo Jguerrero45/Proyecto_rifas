@@ -163,6 +163,7 @@ button:hover::before {
     margin-bottom: 28vw;
     margin-left: 1vw;
 }
+
 .containerbar {
     display: flex;
     justify-content: center;
@@ -170,8 +171,8 @@ button:hover::before {
     height: 4vw;
     width: 30vw;
 }
-  
-  .progress-bar__container {
+
+.progress-bar__container {
     width: 80%;
     height: 2rem;
     border-radius: 2rem;
@@ -181,24 +182,24 @@ button:hover::before {
     will-change: transform;
     box-shadow: 0 0 5px #e76f51;
 }
-  
-  .progress-bar {
+
+.progress-bar {
     position: absolute;
     height: 100%;
     width: 100%;
     content: "";
     background-color: #e76f51;
-    top:0;
+    top: 0;
     bottom: 0;
     left: -100%;
     border-radius: inherit;
     display: flex;
     justify-content: center;
-    align-items:center;
+    align-items: center;
     color: white;
     font-family: sans-serif;
 }
-  
-  .progress-bar__text {
+
+.progress-bar__text {
     display: none;
 }
