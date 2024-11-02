@@ -17,6 +17,7 @@ body {
 
 main {
     margin-top: 10vw;
+
 }
 
 header {
@@ -134,4 +135,13 @@ footer {
 
 a {
     color: white;
+}
+
+.texto_inicio {
+    padding: 10%;
+}
+
+.boton_compra {
+    display: flex;
+    justify-content: center;
 }
