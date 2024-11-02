@@ -180,7 +180,7 @@ button:hover::before {
     overflow: hidden;
     transition: all 0.5s;
     will-change: transform;
-    box-shadow: 0 0 5px #e76f51;
+    box-shadow: 0 0 5px #05DA51;
 }
 
 .progress-bar {
@@ -188,7 +188,7 @@ button:hover::before {
     height: 100%;
     width: 100%;
     content: "";
-    background-color: #e76f51;
+    background-color: #05DA51;
     top: 0;
     bottom: 0;
     left: -100%;
