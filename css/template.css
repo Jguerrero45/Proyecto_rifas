@@ -9,7 +9,7 @@ a {
     box-shadow: 0px 1px 13px rgba(5, 218, 81, 0.6);
     cursor: pointer;
     transition: all 120ms;
-    display: flex;
+    /* display: flex; */
     align-items: center;
     justify-content: center;
     background: #e2e2e2;
@@ -57,6 +57,13 @@ a {
     bottom: 0.625em;
     color: #0e131b;
 
+}
+
+.topFlex {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
 }
 
 .card:hover::after {
@@ -193,7 +200,7 @@ button:hover::before {
     bottom: 0;
     left: -100%;
     border-radius: inherit;
-    display: flex;
+    /* display: flex; */
     justify-content: center;
     align-items: center;
     color: white;
@@ -211,10 +218,10 @@ button:hover::before {
     padding: 1vw;
     border-radius: 3vw;
     margin: 0 auto;
-    margin-top: 23vw;
     position: absolute;
-    margin-left: 20vw;
     margin-right: 5vw;
+    left: 52%;
+    bottom: 33%;
 }
 
 #texto_meta {
