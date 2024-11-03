@@ -167,7 +167,7 @@ button:hover::before {
 }
 
 .descripcion {
-    margin-bottom: 28vw;
+    margin-bottom: 35vw;
     margin-left: 1vw;
 }
 
@@ -200,7 +200,6 @@ button:hover::before {
     bottom: 0;
     left: -100%;
     border-radius: inherit;
-    /* display: flex; */
     justify-content: center;
     align-items: center;
     color: white;
@@ -221,7 +220,7 @@ button:hover::before {
     position: absolute;
     margin-right: 5vw;
     left: 52%;
-    bottom: 33%;
+    bottom: 40%;
 }
 
 #texto_meta {
