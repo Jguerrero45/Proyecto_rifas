@@ -322,10 +322,9 @@ button:hover::before {
     }
 
     footer {
-        position: fixed;
+        position: relative;
         bottom: 0;
         width: 100%;
-        z-index: 2;
     }
 
 }
@@ -340,7 +339,7 @@ button:hover::before {
     .card {
         width: 90%;
         height: 90%;
-        left: 5%;
+        left: 7%;
     }
 
     .containerbar {
@@ -350,6 +349,7 @@ button:hover::before {
         align-content: stretch;
         flex-wrap: wrap;
         justify-content: space-evenly;
+        padding-bottom: 20%;
     }
 
     .info_rifa {
@@ -360,17 +360,18 @@ button:hover::before {
         font-size: 55%;
         left: 1%;
         margin: 2%;
+        margin-top: 15%;
     }
 
     #texto_meta {
-        margin-top: 0;
+        margin-top: 8%;
+        margin-left: 23%;
     }
 
     footer {
-        position: fixed;
+        position: relative;
         bottom: 0;
         width: 100%;
-        z-index: 2;
     }
 
     .progress-bar__container {
