@@ -201,6 +201,8 @@ a {
 
     .texto_inicio {
         padding: 5%;
+        margin-right: 25%;
+        margin-top: 5%;
     }
 
     .topFlex {
@@ -228,6 +230,7 @@ a {
 
     .texto_inicio {
         padding: 2%;
+        margin-right: 25%;
     }
 
     .topFlex {
@@ -269,6 +272,7 @@ a {
     .texto_inicio {
         padding: 5%;
         font-size: 0.9rem;
+        margin-right: 25%;
     }
 
     .footer {
