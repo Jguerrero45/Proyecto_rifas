@@ -314,8 +314,9 @@ button:hover::before {
         
     }
     .card {
-        width: 100%;
-        height: 100%;
+        width: 90%;
+        height: 90%;
+        left: 5%;
     }
 
     .containerbar {
@@ -328,12 +329,13 @@ button:hover::before {
     }
 
     .info_rifa {
-        position: absolute;
+        position: relative;
         height: 20%;
         width: 90%;
         z-index: 1;
         font-size: 55%;
-        right: 0;
+        left: 1%;
+        margin: 2%;
     }
 
     #texto_meta {
@@ -345,6 +347,10 @@ button:hover::before {
         bottom: 0;
         width: 100%;
         z-index: 2;
+    }
+    .progress-bar__container {
+        left: 1%;
+        margin-top: 1%;
     }
 
 }
