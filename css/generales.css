@@ -235,6 +235,8 @@ a {
         justify-content: center;
         align-items: center;
         margin-top: 5%;
+        right: 15%;
+        position: relative;
     }
 }
 
