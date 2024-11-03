@@ -293,10 +293,5 @@ a {
         margin-top: 25%;
     }
 
-    .topFlex {
-        display: block;
-        justify-content: center;
-        align-items: center;
-        margin-top: 5%;
-    }
+
 }
