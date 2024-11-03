@@ -266,37 +266,45 @@ button:hover::before {
 
     main {
         margin-left: 20%;
-        margin-top: 100%;
+        padding-top: 1%;
     }
 
     .info_rifa {
         position: absolute;
-        height: 20%;
-        width: 80%;
-        font-size: 65%;
-        right: 4%;
-        top: 50%;
+        height: 30%;
+        width: 70%;
+        font-size: 80%;
+        right: 7%;
+        top: 60%;
         margin-top: 25%;
     }
+
 
     footer {
         position: relative;
         bottom: 0;
         width: 100%;
-
     }
 
     .containerbar {
-        margin-top: 5%;
         width: 80%;
         height: 10%;
         align-content: stretch;
         flex-wrap: wrap;
         justify-content: space-evenly;
+        padding-bottom: 30%;
+        margin-top: 2%;
     }
 
     #texto_meta {
-        width: 100%;
+        margin-top: 6%;
+        margin-right: 20%;
+    }
+
+    .card {
+        width: 45%;
+        height: 45%;
+        left: 18%;
     }
 }
 
