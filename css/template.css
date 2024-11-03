@@ -308,14 +308,36 @@ button:hover::before {
 }
 
 @media (max-width: 480px) {
+    .topFlex {
+        flex-wrap: wrap;
+        align-items: center;
+        
+    }
+    .card {
+        width: 100%;
+        height: 100%;
+    }
+
+    .containerbar {
+        margin-top: 5%;
+        width: 100%;
+        height: 10%;
+        align-content: stretch;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
     .info_rifa {
         position: absolute;
         height: 20%;
-        width: 60%;
+        width: 90%;
+        z-index: 1;
         font-size: 55%;
-        right: 10%;
-        top: 50%;
-        margin-top: 25%;
+        right: 0;
+    }
+
+    #texto_meta {
+        margin-top: 0;
     }
 
     footer {
