@@ -266,7 +266,7 @@ button:hover::before {
     .info_rifa {
         position: absolute;
         height: 20%;
-        width: 60%;
+        width: 80%;
         font-size: 65%;
         right: 13%;
         top: 50%;
@@ -280,12 +280,21 @@ button:hover::before {
 
     }
 
-    .progress-bar__container {
-        left: 100%;
-        margin-top: 80%;
+    .containerbar {
+        margin-top: 5%;
+        width: 100%;
+        height: 10%;
+        align-content: stretch;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
     }
 
+    #texto_meta {
+        width: 100%;
+    }
 }
+
+
 
 @media (max-width: 576px) {
     .info_rifa {
@@ -311,8 +320,9 @@ button:hover::before {
     .topFlex {
         flex-wrap: wrap;
         align-items: center;
-        
+
     }
+
     .card {
         width: 100%;
         height: 100%;
@@ -346,5 +356,4 @@ button:hover::before {
         width: 100%;
         z-index: 2;
     }
-
 }
