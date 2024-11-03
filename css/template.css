@@ -198,8 +198,25 @@ button:hover::before {
     align-items: center;
     color: white;
     font-family: sans-serif;
+
 }
 
 .progress-bar__text {
     display: none;
+}
+
+.info_rifa {
+    background-color: #646464;
+    color: rgb(255, 255, 255);
+    padding: 1vw;
+    border-radius: 3vw;
+    margin: 0 auto;
+    margin-top: 23vw;
+    position: absolute;
+    margin-left: 20vw;
+    margin-right: 5vw;
+}
+
+#texto_meta {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
