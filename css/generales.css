@@ -318,6 +318,7 @@ a {
     left: 0;
     align-items: center;
     transition: all .4s ease;
+    z-index: 11;
 }
 
 
@@ -342,6 +343,7 @@ a {
         height: auto;
         flex-direction: row;
         gap: 0rem;
+
     }
 
     .link {
