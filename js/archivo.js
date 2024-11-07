@@ -2,12 +2,12 @@
 
 const x = 1000; // Tickets Totales
 const ArrayBoletosNoDisponible = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-const ArrayBoletosDisponible = Array.from({ length: x + 1 }, (_, i) => i);
+const ArrayBoletosDisponible = Array.from({ length: x + 1 }, (_, i) => i.toString().padStart(4, '0'));
 
 function botonComprarPorNumero() {
     const container = document.querySelector('.days-btn-container');
     ArrayBoletosDisponible.forEach(boleto => {
-        if (ArrayBoletosNoDisponible.includes(boleto)) {
+        if (ArrayBoletosNoDisponible.includes(parseInt(boleto))) {
             return; // Skip this boleto if it's in ArrayBoletosNoDisponible
         }
 
