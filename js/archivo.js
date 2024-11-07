@@ -1,6 +1,6 @@
 
 
-const x = 100; // Tickets Totales
+const x = 1000; // Tickets Totales
 const ArrayBoletosNoDisponible = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const ArrayBoletosDisponible = Array.from({ length: x + 1 }, (_, i) => i);
 
@@ -25,6 +25,8 @@ function botonComprarPorNumero() {
         container.appendChild(input);
         container.appendChild(label);
     });
+    const button = document.getElementById('Numero');
+    button.disabled = true;
 }
 function enviarWhatsApp() {
     var cedula = document.getElementById('cedula').innerText;
