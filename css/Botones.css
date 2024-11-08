@@ -12,7 +12,6 @@
 
 .day-btn {
   display: none;
-  /* Hide the original checkbox */
 }
 
 .day-label {
@@ -33,7 +32,6 @@
 
 }
 
-/* Apply styles for the selected state */
 .day-btn:checked+.day-label {
   background-color: #05DA51;
   background-image: linear-gradient(147deg, #00ccff 0%, #004cff 74%);
@@ -46,7 +44,114 @@ main {
   margin: 0 auto;
 }
 
+
+
+.form {
+  --bg-light: #efefef;
+  --bg-dark: #707070;
+  --clr: #58bc82;
+  --clr-alpha: #9c9c9c60;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+
+.form .input-span {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form input[type="text"],
+.form input[type="tel"],
+.form select {
+  border-radius: 0.5rem;
+  padding: 1rem 0.75rem;
+  width: 100%;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--clr-alpha);
+  outline: 2px solid var(--bg-dark);
+}
+
+.form input[type="text"]:focus,
+.form input[type="tel"]:focus,
+.form select:focus {
+  outline: 2px solid var(--clr);
+}
+
+.label {
+  align-self: flex-start;
+  color: var(--clr);
+  font-weight: 600;
+}
+
+.span {
+  text-decoration: none;
+  color: var(--bg-dark);
+}
+
+.span a {
+  color: var(--clr);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  background-color: #e0e0e0;
+  margin: 15% auto;
+  padding: 20px;
+  border: 2px solid #5a5a5a;
+  width: 40%;
+  border-radius: 40px;
+  color: #3b3b3b;
+}
+
+.close {
+  color: #000000;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: rgb(235, 27, 27);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
 @media (max-width: 768px) {
+  .modal-content {
+    width: 80%;
+  }
+
   .days-btn-container {
     width: 80%;
   }

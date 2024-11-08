@@ -46,17 +46,77 @@
     <main>
         <div class="Flex">
             <section class="bottom">
-                <label id="cedula">12345678</label> <br>
-                <label id="nombre">Juan</label> <br>
-                <label id="apellido">Pérez</label> <br>
-                <label id="telefono">5551234567</label><br>
-                <label id="estado">Tachira</label> <br>
-                <button onclick="enviarWhatsApp()"><span>Enviar a WhatsApp</span></button>
                 <button><span>&#128302;Prueba Tu Suerte</span></button>
                 <button id="Numero" onclick="botonComprarPorNumero()"><span>&#128467; Comprar por numero</span></button>
         </div>
         <div class="days-btn-container">
         </div>
+        <form class="form">
+            <div class="form-row">
+                <span class="input-span">
+                    <label for="nombre" class="label">Nombres y Apellidos*</label>
+                    <input type="text" name="nombre" id="nombre" />
+                </span>
+            </div>
+            <div class="form-row">
+                <span class="input-span">
+                    <label for="cedula" class="label">Cédula*</label>
+                    <input type="text" name="cedula" id="cedula" />
+                </span>
+                <span class="input-span">
+                    <label for="estado" class="label">Estado*</label>
+                    <select name="estado" id="estado">
+                        <option value="amazonas">Amazonas</option>
+                        <option value="anzoategui">Anzoátegui</option>
+                        <option value="apure">Apure</option>
+                        <option value="aragua">Aragua</option>
+                        <option value="barinas">Barinas</option>
+                        <option value="bolivar">Bolívar</option>
+                        <option value="carabobo">Carabobo</option>
+                        <option value="cojedes">Cojedes</option>
+                        <option value="delta_amacuro">Delta Amacuro</option>
+                        <option value="distrito_capital">Distrito Capital</option>
+                        <option value="falcon">Falcón</option>
+                        <option value="guarico">Guárico</option>
+                        <option value="lara">Lara</option>
+                        <option value="merida">Mérida</option>
+                        <option value="miranda">Miranda</option>
+                        <option value="monagas">Monagas</option>
+                        <option value="nueva_esparta">Nueva Esparta</option>
+                        <option value="portuguesa">Portuguesa</option>
+                        <option value="sucre">Sucre</option>
+                        <option value="tachira">Táchira</option>
+                        <option value="trujillo">Trujillo</option>
+                        <option value="vargas">Vargas</option>
+                        <option value="yaracuy">Yaracuy</option>
+                        <option value="zulia">Zulia</option>
+                    </select>
+                </span>
+            </div>
+            <div class="form-row">
+                <span class="input-span">
+                    <label for="telefono" class="label">Número de Teléfono*</label>
+                    <input type="tel" name="telefono" id="telefono" />
+                </span>
+            </div>
+            <span class="span">Al enviar al WhatsApp autorizo el uso de<a href="#"> mis datos personales</a></span>
+            <button type="button" onclick="enviarWhatsApp()"><span>Enviar a
+                    WhatsApp</span></button>
+        </form>
+
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Uso de sus Datos</h2>
+                <p>Rifas El Trébol, con domicilio en Carabobo, es responsable del uso y tratamiento de sus datos
+                    personales.</p>
+                <h3>Transparencia</h3>
+                <p>Sus datos personales serán tratados de manera pública con el objetivo de garantizar la transparencia
+                    del evento. Esto incluye la posibilidad de comunicación a través de diversos medios, tales como la
+                    web, teléfono, correo electrónico, SMS, entre otros.</p>
+            </div>
+        </div>
+
 
     </main>
 
@@ -78,7 +138,26 @@
 
         </section>
     </footer>
+    <script>
+        document.querySelector('a[href="#"]').addEventListener('click', function (event) {
+            event.preventDefault();
+            document.getElementById('myModal').style.display = "block";
+        });
 
+        document.querySelector('.close').addEventListener('click', function () {
+            document.getElementById('myModal').style.display = "none";
+        });
+
+        document.getElementById('closeModal').addEventListener('click', function () {
+            document.getElementById('myModal').style.display = "none";
+        });
+
+        window.addEventListener('click', function (event) {
+            if (event.target == document.getElementById('myModal')) {
+                document.getElementById('myModal').style.display = "none";
+            }
+        });
+    </script>
     <script src="https://kit.fontawesome.com/003123b854.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script type="module" src="../js/prueba.js"></script>

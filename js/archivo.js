@@ -29,13 +29,12 @@ function botonComprarPorNumero() {
     button.disabled = true;
 }
 function enviarWhatsApp() {
-    var cedula = document.getElementById('cedula').innerText;
-    var nombre = document.getElementById('nombre').innerText;
-    var apellido = document.getElementById('apellido').innerText;
-    var telefono = document.getElementById('telefono').innerText;
-    var estado = document.getElementById('estado').innerText;
+    var cedula = document.getElementById('cedula').value;
+    var nombre = document.getElementById('nombre').value;
+    var telefono = document.getElementById('telefono').value;
+    var estado = document.getElementById('estado').value;
 
-    var mensaje = `Cédula: ${cedula}\nNombre: ${nombre}\nApellido: ${apellido}\nTeléfono: ${telefono}\nEstado: ${estado}`;
+    var mensaje = `Cédula: ${cedula}\nNombre: ${nombre}\nTeléfono: ${telefono}\nEstado: ${estado}`;
     var mensajeCodificado = encodeURIComponent(mensaje);
     var numeroTelefono = '584124007847';
     var url = `https://wa.me/${numeroTelefono}?text=${mensajeCodificado}`;
