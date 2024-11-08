@@ -19,7 +19,7 @@ function revision() {
             if (ArrayBoletosNoDisponible.includes(parseInt(numeroBoleto.substring(0, 3)))) {
                 alert('El número de boleto ya fue vendido');
             } else {
-                ArrayBoletosNoDisponible.push(parseInt(numeroBoleto.substring(0, 3) ));
+                ArrayBoletosNoDisponible.push(parseInt(numeroBoleto.substring(0, 3)));
                 alert('Boleto vendido con exito');
             }
         } else if (numeroBoleto[4] === 'e') {
@@ -31,7 +31,7 @@ function revision() {
                 alert('Boleto agregado a la lista de venta exitosamente');
             } else {
                 alert('El número de boleto no ha sido vendido');
-                
+
             }
         }
     }
@@ -79,6 +79,8 @@ function botonComprarPorNumero() {
     button2.disabled = false;
     selecting = true;
 }
+
+document.getElementById('comprar').addEventListener('click', botonComprarPorNumero);
 
 function botonComprarPorSuerte() {
     const container = document.querySelector('.days-btn-container');
@@ -136,7 +138,7 @@ function minus() {
         label.textContent = currentValue - 2;
         precio.textContent = label.textContent * precioTicket;
     }
-    
+
 }
 
 function enviarWhatsApp() {
@@ -160,7 +162,7 @@ function enviarWhatsApp() {
         if (Rnumeros === 0) {
             alert('Debe seleccionar minimo de 2 numeros y unicamente en numeros pares (2, 4, 6, 8, 10, etc.)');
             return;
-        }else{
+        } else {
             for (let i = 0; i < Rnumeros; i++) {
                 var numero = Math.floor(Math.random() * 1000);
                 if (ArrayBoletosNoDisponible.includes(numero)) {
@@ -173,7 +175,7 @@ function enviarWhatsApp() {
         }
     }
 
-    
+
     var mensaje = `Cédula: ${cedula}\nNombre: ${nombre}\nTeléfono: ${telefono}\nEstado: ${estado}\nCantidad de Boletos: ${boletos}\nNmros de Boletos: ${NmrosBoletos}\nForma de Pago: ${formadePago}`;
     var mensajeCodificado = encodeURIComponent(mensaje);
     var numeroTelefono = '584124007847';

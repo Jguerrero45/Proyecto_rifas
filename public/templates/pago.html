@@ -9,7 +9,14 @@
     <link rel="stylesheet" href="../css/generales.css">
     <link rel="stylesheet" href="../css/Botones.css">
     <script src="../js/archivo.js"></script>
-
+    <style>
+        .days-btn-container {
+            max-height: 200px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+    </style>
 </head>
 
 <body>
@@ -48,6 +55,7 @@
             <section class="bottom">
                 <button id="Suerte" onclick="botonComprarPorSuerte()"><span>&#128302;Prueba Tu Suerte</span></button>
                 <button id="Numero" onclick="botonComprarPorNumero()"><span>&#128467; Comprar por numero</span></button>
+            </section>
         </div>
         <div class="days-btn-container">
         </div>
@@ -108,15 +116,14 @@
                 </span>
             </div>
             <span class="span">Al enviar al WhatsApp autorizo el uso de<a href="#"> mis datos personales</a></span>
-            <button type="button" onclick="enviarWhatsApp()"><span>Enviar a
-                    WhatsApp</span></button>
+            <button type="button" onclick="enviarWhatsApp()"><span>Enviar a WhatsApp</span></button>
         </form>
 
         <div id="myModal" class="modal">
             <div class="modal-content">
                 <span class="close">&times;</span>
                 <h2>Uso de sus Datos</h2>
-                <p>Rifas El Trébol, con domicilio en Carabobo, es responsable del uso y tratamiento de sus datos
+                <p>Rifas El Trébol, con domicilio en Carabobo,es responsable del uso y tratamiento de sus datos
                     personales.</p>
                 <h3>Transparencia</h3>
                 <p>Sus datos personales serán tratados de manera pública con el objetivo de garantizar la transparencia
@@ -124,8 +131,6 @@
                     web, teléfono, correo electrónico, SMS, entre otros.</p>
             </div>
         </div>
-
-
     </main>
 
     <footer>
