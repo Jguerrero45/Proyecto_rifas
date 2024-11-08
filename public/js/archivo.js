@@ -1,14 +1,41 @@
 
 let precioTicket = 5; // Precio por Ticket en $$
 const x = 1000; // Tickets Totales
-const ArrayBoletosNoDisponible = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const ArrayBoletosNoDisponible = [];
 const ArrayBoletosDisponible = Array.from({ length: x + 1 }, (_, i) => i.toString().padStart(4, '0'));
 
 let selectedCount = 0;
 let selectedBoletos = [];
 
 selecting = false;
-
+function revision() {
+    var numeroBoleto = document.getElementById('id_boleto').value;
+    if (numeroBoleto.length < 4) {
+        alert('El número de boleto debe tener 4 dígitos y una letra al final sea p o e');
+    } else {
+        if (numeroBoleto[4] !== 'p' && numeroBoleto[4] !== 'e') {
+            alert('El número de boleto debe tener 4 dígitos y una letra al final sea p o e');
+        } else if (numeroBoleto[4] === 'p') {
+            if (ArrayBoletosNoDisponible.includes(parseInt(numeroBoleto.substring(0, 3)))) {
+                alert('El número de boleto ya fue vendido');
+            } else {
+                ArrayBoletosNoDisponible.push(parseInt(numeroBoleto.substring(0, 3) ));
+                alert('Boleto vendido con exito');
+            }
+        } else if (numeroBoleto[4] === 'e') {
+            if (ArrayBoletosNoDisponible.includes(parseInt(numeroBoleto.substring(0, 3)))) {
+                const index = ArrayBoletosNoDisponible.indexOf(parseInt(numeroBoleto.substring(0, 3)));
+                if (index > -1) {
+                    ArrayBoletosNoDisponible.splice(index, 1);
+                }
+                alert('Boleto agregado a la lista de venta exitosamente');
+            } else {
+                alert('El número de boleto no ha sido vendido');
+                
+            }
+        }
+    }
+}
 function updateSelection(boleto, isChecked) {
     if (isChecked) {
         selectedCount += 1;
