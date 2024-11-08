@@ -122,7 +122,7 @@ function minus() {
         label.textContent = currentValue - 2;
         precio.textContent = label.textContent * precioTicket;
     }
-    
+
 }
 
 function enviarWhatsApp() {
@@ -146,7 +146,7 @@ function enviarWhatsApp() {
         if (Rnumeros === 0) {
             alert('Debe seleccionar minimo de 2 numeros y unicamente en numeros pares (2, 4, 6, 8, 10, etc.)');
             return;
-        }else{
+        } else {
             for (let i = 0; i < Rnumeros; i++) {
                 var numero = Math.floor(Math.random() * 1000);
                 if (ArrayBoletosNoDisponible.includes(numero)) {
@@ -159,10 +159,10 @@ function enviarWhatsApp() {
         }
     }
 
-    
+
     var mensaje = `Cédula: ${cedula}\nNombre: ${nombre}\nTeléfono: ${telefono}\nEstado: ${estado}\nCantidad de Boletos: ${boletos}\nNmros de Boletos: ${NmrosBoletos}\nForma de Pago: ${formadePago}`;
     var mensajeCodificado = encodeURIComponent(mensaje);
-    var numeroTelefono = '584124007847';
+    var numeroTelefono = '584244061953';
     var url = `https://wa.me/${numeroTelefono}?text=${mensajeCodificado}`;
     window.open(url, '_blank');
 }
