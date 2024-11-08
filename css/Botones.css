@@ -84,7 +84,12 @@ main {
   align-items: center;
   gap: 0.5rem;
   background-color: var(--clr-alpha);
+  color: var(--bg-light);
   outline: 2px solid var(--bg-dark);
+}
+
+.form select option {
+  background-color: var(--bg-dark);
 }
 
 .form input[type="text"]:focus,
