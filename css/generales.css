@@ -332,6 +332,11 @@ a {
     border-radius: 10px;
 }
 
+.ayuda_compra {
+    margin-top: 5%;
+    color: #616161;
+}
+
 @media (min-width: 768px) {
     .labe_hamburguesa {
         display: none;
