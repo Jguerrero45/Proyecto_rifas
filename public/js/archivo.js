@@ -1,5 +1,5 @@
 
-
+let precioTicket = 5; // Precio por Ticket en $$
 const x = 1000; // Tickets Totales
 const ArrayBoletosNoDisponible = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const ArrayBoletosDisponible = Array.from({ length: x + 1 }, (_, i) => i.toString().padStart(4, '0'));
@@ -78,6 +78,10 @@ function botonComprarPorSuerte() {
                 <div class="button-base"></div>
             </button>
         </div>
+        <div class="button-container">
+            <label class="numeros">total en &#128178;: </label>
+            <label class="numeros" id="precio">0</label>
+        </div>
     `;
 
     const button = document.getElementById('Suerte');
@@ -91,16 +95,21 @@ function botonComprarPorSuerte() {
 
 function plus() {
     const label = document.getElementById('numeros');
+    const precio = document.getElementById('precio');
     let currentValue = parseInt(label.textContent);
-    label.textContent = currentValue + 1;
+    label.textContent = currentValue + 2;
+    precio.textContent = label.textContent * precioTicket;
 }
 
 function minus() {
     const label = document.getElementById('numeros');
+    const precio = document.getElementById('precio');
     let currentValue = parseInt(label.textContent);
     if (currentValue > 0) {
-        label.textContent = currentValue - 1;
+        label.textContent = currentValue - 2;
+        precio.textContent = label.textContent * precioTicket;
     }
+    
 }
 
 function enviarWhatsApp() {
@@ -108,11 +117,12 @@ function enviarWhatsApp() {
     var nombre = document.getElementById('nombre').value;
     var telefono = document.getElementById('telefono').value;
     var estado = document.getElementById('estado').value;
+    var formadePago = document.getElementById('pago').value;
     var boletos = 0;
     var NmrosBoletos = '';
     if (selecting) {
-        if (selectedCount < 2) {
-            alert('Debe seleccionar un mínimo de 2 números.');
+        if (selectedCount === 0 || selectedCount % 2 !== 0) {
+            alert('Debe seleccionar minimo de 2 numeros y unicamente en numeros pares (2, 4, 6, 8, 10, etc.)');
             return;
         }
         boletos = selectedCount;
@@ -120,10 +130,10 @@ function enviarWhatsApp() {
     } else if (!selecting) {
         boletos = document.getElementById('numeros').textContent;
         var Rnumeros = parseInt(boletos);
-        if (Rnumeros < 2) {
-            alert('Debe seleccionar un mínimo de 2 números.');
+        if (Rnumeros === 0) {
+            alert('Debe seleccionar minimo de 2 numeros y unicamente en numeros pares (2, 4, 6, 8, 10, etc.)');
             return;
-        } else {
+        }else{
             for (let i = 0; i < Rnumeros; i++) {
                 var numero = Math.floor(Math.random() * 1000);
                 if (ArrayBoletosNoDisponible.includes(numero)) {
@@ -136,9 +146,8 @@ function enviarWhatsApp() {
         }
     }
 
-
-
-    var mensaje = `Cédula: ${cedula}\nNombre: ${nombre}\nTeléfono: ${telefono}\nEstado: ${estado}\nCantidad de Boletos: ${boletos}\nNmros de Boletos: ${NmrosBoletos}`;
+    
+    var mensaje = `Cédula: ${cedula}\nNombre: ${nombre}\nTeléfono: ${telefono}\nEstado: ${estado}\nCantidad de Boletos: ${boletos}\nNmros de Boletos: ${NmrosBoletos}\nForma de Pago: ${formadePago}`;
     var mensajeCodificado = encodeURIComponent(mensaje);
     var numeroTelefono = '584124007847';
     var url = `https://wa.me/${numeroTelefono}?text=${mensajeCodificado}`;

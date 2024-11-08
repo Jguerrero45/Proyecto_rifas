@@ -98,6 +98,14 @@
                     <label for="telefono" class="label">Número de Teléfono*</label>
                     <input type="tel" name="telefono" id="telefono" />
                 </span>
+                <span class="input-span">
+                    <label for="pago" class="label">Forma de pago*</label>
+                    <select name="pago" id="pago">
+                        <option value="Pago movil">Pago Movil</option>
+                        <option value="Efectivo">Efectivo</option>
+                        <option value="Zelle">Zelle</option>
+                    </select>
+                </span>
             </div>
             <span class="span">Al enviar al WhatsApp autorizo el uso de<a href="#"> mis datos personales</a></span>
             <button type="button" onclick="enviarWhatsApp()"><span>Enviar a
