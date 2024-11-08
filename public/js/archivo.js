@@ -21,13 +21,9 @@ function updateSelection(boleto, isChecked) {
     console.log(`Selected Boletos: ${selectedBoletos}`);
 }
 
-
-
 function botonComprarPorNumero() {
     const container = document.querySelector('.days-btn-container');
-    container.innerHTML = `
-        
-    `;
+    container.innerHTML = ``;
     ArrayBoletosDisponible.forEach(boleto => {
         if (ArrayBoletosNoDisponible.includes(parseInt(boleto))) {
             return; // Skip this boleto if it's in ArrayBoletosNoDisponible
@@ -61,7 +57,9 @@ function botonComprarPorSuerte() {
     const container = document.querySelector('.days-btn-container');
     container.innerHTML = `
     <div class="button-container">
-        <p>Los números seran seleccionados al azar, de la cantidad tickets que desea.</p>
+        <p>Los números seran seleccionados al azar, de la cantidad tickets que desea.
+        <br><br>
+        recuerde que debe seleccionar un mínimo de 2 números.</p>
     </div>
         <div class="button-container">
             <button class="button-3d" id="minus" onclick="minus()">
@@ -89,23 +87,20 @@ function botonComprarPorSuerte() {
     selecting = false;
     selectedCount = 0;
     selectedBoletos = [];
-    
-
 }
 
 function plus() {
     const label = document.getElementById('numeros');
     let currentValue = parseInt(label.textContent);
-    label.textContent = currentValue + 2;
+    label.textContent = currentValue + 1;
 }
 
 function minus() {
     const label = document.getElementById('numeros');
     let currentValue = parseInt(label.textContent);
     if (currentValue > 0) {
-        label.textContent = currentValue - 2;
+        label.textContent = currentValue - 1;
     }
-    
 }
 
 function enviarWhatsApp() {
@@ -116,8 +111,8 @@ function enviarWhatsApp() {
     var boletos = 0;
     var NmrosBoletos = '';
     if (selecting) {
-        if (selectedCount === 0 || selectedCount % 2 !== 0) {
-            alert('Debe seleccionar minimo de 2 numeros y unicamente en numeros pares (2, 4, 6, 8, 10, etc.)');
+        if (selectedCount < 2) {
+            alert('Debe seleccionar un mínimo de 2 números.');
             return;
         }
         boletos = selectedCount;
@@ -125,10 +120,10 @@ function enviarWhatsApp() {
     } else if (!selecting) {
         boletos = document.getElementById('numeros').textContent;
         var Rnumeros = parseInt(boletos);
-        if (Rnumeros === 0) {
-            alert('Debe seleccionar minimo de 2 numeros y unicamente en numeros pares (2, 4, 6, 8, 10, etc.)');
+        if (Rnumeros < 2) {
+            alert('Debe seleccionar un mínimo de 2 números.');
             return;
-        }else{
+        } else {
             for (let i = 0; i < Rnumeros; i++) {
                 var numero = Math.floor(Math.random() * 1000);
                 if (ArrayBoletosNoDisponible.includes(numero)) {
@@ -141,7 +136,8 @@ function enviarWhatsApp() {
         }
     }
 
-    
+
+
     var mensaje = `Cédula: ${cedula}\nNombre: ${nombre}\nTeléfono: ${telefono}\nEstado: ${estado}\nCantidad de Boletos: ${boletos}\nNmros de Boletos: ${NmrosBoletos}`;
     var mensajeCodificado = encodeURIComponent(mensaje);
     var numeroTelefono = '584124007847';
