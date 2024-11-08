@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rifas el Trebol</title>
+    <link rel="stylesheet" href="../css/generales.css">
+    <link rel="stylesheet" href="../css/template.css">
+    <link rel="stylesheet" href="../css/Botones.css">
+
+</head>
+
+<body>
+    <style>
+        .agregar_quitar {
+            width: 30%;
+            height: 30%;
+            margin-top: 10%;
+        }
+
+        @media (max-width: 425px) {
+            main {
+                margin: 0 auto;
+            }
+
+            .agregar_quitar {
+                width: 60%;
+                height: 60%;
+                margin-top: 10%;
+            }
+        }
+    </style>
+    <header class="header">
+        <nav class="navbar">
+            <h1 class="logo">Logo</h1>
+
+            <label class="labe_hamburguesa" for="menu_hamburguesa">
+                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="list_icon"
+                    viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                </svg>
+            </label>
+
+            <input class="menu_hamburguesa" type="checkbox" name="" id="menu_hamburguesa">
+
+            <ul class="ul_links">
+                <li class="li_links">
+                    <a href="index.html" class="link">Inicio</a>
+                </li>
+                <li class="li_links">
+                    <a href="./templates/rifas.html" class="link">Rifas</a>
+                </li>
+                <li class="li_links">
+                    <a href="#Redes" class="link">Contacto</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="agregar_quitar">
+
+
+        <p> <b>A traves de este apartado podras agregar / eliminar numeros de la rifa segun la gente vaya pagando
+                los boletos. Para agregar un boleto, simplemente introduce el numero del boleto y presiona el boton
+                'Enviar'
+                <br><br>
+                agregar como pagado: al agregar como pagado se elimina la opcion de comprar el numero mediante la
+                pagina, es decir, el numero ya no estara disponible para la compra.
+                <br><br>
+                eliminar como pagado: al eliminar como pagado se habilita la opcion de comprar el numero mediante la
+                pagina, es decir, vuelve a aparecer en la lista de numeros disponibles para la compra.
+                <br><br>
+                para apregar como pagado: ingrese el numero del boleto con una letra 'p' al final, por ejemplo: XXXXp
+                <br><br>
+                para eliminar como pagado: ingrese el numero del boleto con una letra 'e' al final, por ejemplo: XXXXe
+                <br><br><br><br><br>
+            </b>
+        </p>
+        <form class="form">
+            <div class="form-row">
+                <span class="input-span">
+                    <label for="id_boleto" class="label">Numero de boleto</label>
+                    <input type="text" name="id_boleto" id="id_boleto" />
+                </span>
+            </div>
+            <button type="button" onclick=""><span>Enviar</span></button>
+        </form>
+
+
+
+    </main>
+
+    <footer>
+        <section class="footer">
+            <div class="titulo_footer">
+                <h1><i><b>Rifas el Trebol</b></i></h1>
+            </div>
+            <div class="informacion">
+                <h3 id="Redes">Redes sociales: </h3>
+                <div class="iconos">
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-solid fa-envelope"></i>
+                    <i class="fa-brands fa-whatsapp"></i>
+                </div>
+                <h3 id="info_numero">Numero de telefono: +58XXXXXXXXXX </h3>
+            </div>
+
+        </section>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/003123b854.js" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,207 @@
+.days-btn-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100%;
+  margin: 0 auto;
+  margin-top: 5%;
+  gap: 3%;
+}
+
+.day-btn {
+  display: none;
+}
+
+.day-label {
+  background-color: transparent;
+  font-size: 100%;
+  font-weight: 600;
+  color: #05DA51;
+  cursor: pointer;
+  border: 3px solid #05DA51;
+  border-radius: 100%;
+  width: 10%;
+  height: 5vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 5px;
+  margin-top: 2%;
+
+}
+
+.day-btn:checked+.day-label {
+  background-color: #05DA51;
+  background-image: linear-gradient(147deg, #00ccff 0%, #004cff 74%);
+  border: none;
+  color: white;
+}
+
+
+main {
+  margin: 0 auto;
+}
+
+
+
+.form {
+  --bg-light: #efefef;
+  --bg-dark: #707070;
+  --clr: #58bc82;
+  --clr-alpha: #9c9c9c60;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+
+.form .input-span {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form input[type="text"],
+.form input[type="tel"],
+.form select {
+  border-radius: 0.5rem;
+  padding: 1rem 0.75rem;
+  width: 100%;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--clr-alpha);
+  color: var(--bg-light);
+  outline: 2px solid var(--bg-dark);
+}
+
+.form select option {
+  background-color: var(--bg-dark);
+}
+
+.form input[type="text"]:focus,
+.form input[type="tel"]:focus,
+.form select:focus {
+  outline: 2px solid var(--clr);
+}
+
+.label {
+  align-self: flex-start;
+  color: var(--clr);
+  font-weight: 600;
+}
+
+.span {
+  text-decoration: none;
+  color: var(--bg-dark);
+}
+
+.span a {
+  color: var(--clr);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  background-color: #e0e0e0;
+  margin: 15% auto;
+  padding: 20px;
+  border: 2px solid #5a5a5a;
+  width: 40%;
+  border-radius: 40px;
+  color: #3b3b3b;
+}
+
+.close {
+  color: #000000;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: rgb(235, 27, 27);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+.agregar_quitar {
+  width: 30%;
+  height: 30%;
+  margin-top: 10%;
+}
+
+@media (max-width: 768px) {
+  .modal-content {
+    width: 80%;
+  }
+
+  .days-btn-container {
+    width: 80%;
+  }
+
+  .day-label {
+    width: 10%;
+    height: 7vw;
+    margin: 0 5px;
+    margin-top: 3%;
+
+  }
+}
+
+@media (max-width: 425px) {
+  .days-btn-container {
+    width: 100%;
+  }
+
+  .day-label {
+    width: 17%;
+    height: 12vw;
+    margin: 0 7px;
+    margin-top: 4%;
+
+  }
+
+  main {
+    margin: 10%;
+  }
+}
+
+@media (max-width: 320px) {
+
+  .day-label {
+    width: 19%;
+    height: 15vw;
+    margin: 0 6px;
+    margin-top: 4%;
+
+  }
+
+}
