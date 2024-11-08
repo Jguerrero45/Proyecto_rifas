@@ -1,41 +1,14 @@
 
 let precioTicket = 5; // Precio por Ticket en $$
 const x = 1000; // Tickets Totales
-const ArrayBoletosNoDisponible = [];
+let ArrayBoletosNoDisponible = [];
 const ArrayBoletosDisponible = Array.from({ length: x + 1 }, (_, i) => i.toString().padStart(4, '0'));
 
 let selectedCount = 0;
 let selectedBoletos = [];
 
 selecting = false;
-function revision() {
-    var numeroBoleto = document.getElementById('id_boleto').value;
-    if (numeroBoleto.length < 4) {
-        alert('El número de boleto debe tener 4 dígitos y una letra al final sea p o e');
-    } else {
-        if (numeroBoleto[4] !== 'p' && numeroBoleto[4] !== 'e') {
-            alert('El número de boleto debe tener 4 dígitos y una letra al final sea p o e');
-        } else if (numeroBoleto[4] === 'p') {
-            if (ArrayBoletosNoDisponible.includes(parseInt(numeroBoleto.substring(0, 3)))) {
-                alert('El número de boleto ya fue vendido');
-            } else {
-                ArrayBoletosNoDisponible.push(parseInt(numeroBoleto.substring(0, 3)));
-                alert('Boleto vendido con exito');
-            }
-        } else if (numeroBoleto[4] === 'e') {
-            if (ArrayBoletosNoDisponible.includes(parseInt(numeroBoleto.substring(0, 3)))) {
-                const index = ArrayBoletosNoDisponible.indexOf(parseInt(numeroBoleto.substring(0, 3)));
-                if (index > -1) {
-                    ArrayBoletosNoDisponible.splice(index, 1);
-                }
-                alert('Boleto agregado a la lista de venta exitosamente');
-            } else {
-                alert('El número de boleto no ha sido vendido');
 
-            }
-        }
-    }
-}
 function updateSelection(boleto, isChecked) {
     if (isChecked) {
         selectedCount += 1;
@@ -48,11 +21,24 @@ function updateSelection(boleto, isChecked) {
     console.log(`Selected Boletos: ${selectedBoletos}`);
 }
 
+function fetchBoletosNoDisponible() {
+    console.log('Fetching boletos...');
+    fetch('/boletos')
+        .then(response => response.json())
+        .then(data => {
+            console.log('data:', data);
+            ArrayBoletosNoDisponible = data;
+            console.log('Boletos No Disponibles:', ArrayBoletosNoDisponible);
+            //botonComprarPorNumero(); // Call the function to update the UI after fetching the data
+        })
+        .catch(error => console.error('Error fetching boletos:', error));
+}
+
 function botonComprarPorNumero() {
     const container = document.querySelector('.days-btn-container');
     container.innerHTML = ``;
     ArrayBoletosDisponible.forEach(boleto => {
-        if (ArrayBoletosNoDisponible.includes(parseInt(boleto))) {
+        if (ArrayBoletosNoDisponible.includes(boleto)) {
             return; // Skip this boleto if it's in ArrayBoletosNoDisponible
         }
         const input = document.createElement('input');
@@ -79,8 +65,6 @@ function botonComprarPorNumero() {
     button2.disabled = false;
     selecting = true;
 }
-
-document.getElementById('comprar').addEventListener('click', botonComprarPorNumero);
 
 function botonComprarPorSuerte() {
     const container = document.querySelector('.days-btn-container');
@@ -138,7 +122,7 @@ function minus() {
         label.textContent = currentValue - 2;
         precio.textContent = label.textContent * precioTicket;
     }
-
+    
 }
 
 function enviarWhatsApp() {
@@ -162,7 +146,7 @@ function enviarWhatsApp() {
         if (Rnumeros === 0) {
             alert('Debe seleccionar minimo de 2 numeros y unicamente en numeros pares (2, 4, 6, 8, 10, etc.)');
             return;
-        } else {
+        }else{
             for (let i = 0; i < Rnumeros; i++) {
                 var numero = Math.floor(Math.random() * 1000);
                 if (ArrayBoletosNoDisponible.includes(numero)) {
@@ -175,10 +159,16 @@ function enviarWhatsApp() {
         }
     }
 
-
+    
     var mensaje = `Cédula: ${cedula}\nNombre: ${nombre}\nTeléfono: ${telefono}\nEstado: ${estado}\nCantidad de Boletos: ${boletos}\nNmros de Boletos: ${NmrosBoletos}\nForma de Pago: ${formadePago}`;
     var mensajeCodificado = encodeURIComponent(mensaje);
     var numeroTelefono = '584124007847';
     var url = `https://wa.me/${numeroTelefono}?text=${mensajeCodificado}`;
     window.open(url, '_blank');
 }
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    fetchBoletosNoDisponible();
+    console.log('DOMContentLoaded');
+    console.log('Boletos No Disponibles:', ArrayBoletosNoDisponible);
+});
