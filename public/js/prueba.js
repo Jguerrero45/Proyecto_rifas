@@ -1,5 +1,5 @@
 
-import { gsap } from "../node_modules/gsap/index.js";
+import { gsap } from "gsap/index.js";
 
 const progressBarContainer = document.querySelector('.progress-bar__container');
 const progressBar = document.querySelector('.progress-bar');
