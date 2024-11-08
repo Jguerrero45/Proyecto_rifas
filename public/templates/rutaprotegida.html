@@ -84,6 +84,13 @@
                     <label for="id_boleto" class="label">Numero de boleto</label>
                     <input type="text" name="id_boleto" id="id_boleto" />
                 </span>
+                <span class="input-span">
+                    <label for="pago" class="label">Que deseas hacer?</label>
+                    <select id="pago">
+                        <option value="pagado">Pagado</option>
+                        <option value="no_pagado">No Pagado</option>
+                    </select>
+                </span>
             </div>
             <button type="button" onclick="revision()"><span>Enviar</span></button>
         </form>
@@ -111,7 +118,7 @@
     </footer>
 
     <script src="https://kit.fontawesome.com/003123b854.js" crossorigin="anonymous"></script>
-
+    <script src="../js/protegida.js"></script>
 </body>
 
 </html>
