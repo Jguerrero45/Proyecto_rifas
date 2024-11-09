@@ -36,14 +36,23 @@ function fetchBoletosNoDisponible() {
 
 function botonComprarPorNumero() {
     const container = document.querySelector('.days-btn-container');
-    container.innerHTML = ``;
+    container.innerHTML = `
+    
+        <form class="form">
+            <div>
+                <div class="form-row">
+                    <span class="input-span">
+                        <label for="buscar" class="label">Buscar boleto</label>
+                        <input type="text" name="buscar" id="buscar" class="search-input" placeholder="Buscar boleto...">
+                    </span>
+                </div>
+            </div>
+        </form>
+        
+    
+    `;
 
-    const searchInput = document.createElement('input');
-    searchInput.type = 'text';
-    searchInput.placeholder = 'Buscar boleto...';
-    searchInput.className = 'search-input';
-    container.appendChild(searchInput);
-
+    const searchInput = container.querySelector('.search-input');
 
     const mostrarBoletos = (filtro = '') => {
         container.querySelectorAll('.day-btn, .day-label').forEach(el => el.remove());

@@ -6,7 +6,7 @@
   justify-content: space-evenly;
   height: 100%;
   margin: 0 auto;
-  margin-top: 5%;
+  margin-top: 3%;
   gap: 3%;
 }
 
@@ -55,8 +55,6 @@
 main {
   margin: 0 auto;
 }
-
-
 
 .form {
   --bg-light: #efefef;
