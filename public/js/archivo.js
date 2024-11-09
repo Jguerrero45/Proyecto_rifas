@@ -37,7 +37,6 @@ function fetchBoletosNoDisponible() {
 function botonComprarPorNumero() {
     const container = document.querySelector('.days-btn-container');
     container.innerHTML = `
-    
         <form class="form">
             <div>
                 <div class="form-row">
@@ -48,11 +47,10 @@ function botonComprarPorNumero() {
                 </div>
             </div>
         </form>
-        
-    
     `;
 
     const searchInput = container.querySelector('.search-input');
+    const selectedBoletos = new Set();
 
     const mostrarBoletos = (filtro = '') => {
         container.querySelectorAll('.day-btn, .day-label').forEach(el => el.remove());
@@ -64,9 +62,14 @@ function botonComprarPorNumero() {
             input.className = 'day-btn';
             input.id = boleto;
             input.type = 'checkbox';
-            input.checked = false;
+            input.checked = selectedBoletos.has(boleto);
 
             input.addEventListener('change', (event) => {
+                if (event.target.checked) {
+                    selectedBoletos.add(boleto);
+                } else {
+                    selectedBoletos.delete(boleto);
+                }
                 updateSelection(boleto, event.target.checked);
             });
 
