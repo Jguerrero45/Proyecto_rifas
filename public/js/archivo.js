@@ -147,6 +147,13 @@ function check() {
     } else {
         lc.innerHTML = `<h1>No se encontro el Ticket ${id} como pagado</h1>`;
     }
+
+    var form = document.getElementById('resultado');
+    if (form.style.display === 'none') {
+        form.style.display = 'block';
+    } else {
+        form.style.display = 'none';
+    }
 }
 
 function enviarWhatsApp() {
