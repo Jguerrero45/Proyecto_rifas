@@ -30,6 +30,17 @@ main {
     flex-direction: column;
     align-items: center;
 }
+.label_container_random {
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
+    margin: 0 auto;
+    margin-top: 5%;
+    gap: 3%;
+}
 
 .titulo_footer {
     text-align: center;

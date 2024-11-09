@@ -95,7 +95,23 @@ function botonComprarPorSuerte() {
             <label class="numeros">total en &#128178;: </label>
             <label class="numeros" id="precio">0</label>
         </div>
+        <p>Boletos seleccionados:</p>
+        <div class="label_container_random" id="numeros_random">
+        
+            
+        </div>
     `;
+    
+
+    document.getElementById('minus').addEventListener('click', () => {
+        let nmrosboletos = generateNmrosboletos();
+        document.getElementById('numeros_random').innerText = nmrosboletos;
+    });
+
+    document.getElementById('plus').addEventListener('click', () => {
+        let nmrosboletos = generateNmrosboletos();
+        document.getElementById('numeros_random').innerText = nmrosboletos;
+    });
 
     const button = document.getElementById('Suerte');
     button.disabled = true;
@@ -156,6 +172,33 @@ function check() {
     }
 }
 
+function generateNmrosboletos() {
+    let nmrosboletos = '';
+    let boletosR = document.getElementById('numeros').textContent;
+    let Rnumeros = parseInt(boletosR);
+    const numeros_random = document.getElementById('numeros_random');
+    numeros_random.innerHTML += '';
+
+    if (Rnumeros < 2) {
+        alert('Debe seleccionar un mínimo de 2 números.');
+        return '';
+    } else {
+        for (let i = 0; i < Rnumeros; i++) {
+            let numero = Math.floor(Math.random() * 10000).toString().padStart(4, '0');
+            if (ArrayBoletosNoDisponible.includes(numero)) {
+                i--;
+            } else {
+                
+                numeros_random.innerHTML += `<label class="numeros2">${numero}</label>`;
+                nmrosboletos += numero + ', ';
+            }
+        }
+        nmrosboletos = nmrosboletos.substring(0, nmrosboletos.length - 2);
+    }
+
+    return nmrosboletos;
+}
+
 function enviarWhatsApp() {
     var cedula = document.getElementById('cedula').value;
     var nombre = document.getElementById('nombre').value;
@@ -179,22 +222,10 @@ function enviarWhatsApp() {
         boletos = selectedCount;
         NmrosBoletos = selectedBoletos.join(', ');
     } else if (!selecting) {
+        Nboletosgenerados = document.getElementById('numeros_random').textContent;
         boletos = document.getElementById('numeros').textContent;
-        var Rnumeros = parseInt(boletos);
-        if (Rnumeros < 2) {
-            alert('Debe seleccionar un mínimo de 2 números.');
-            return;
-        } else {
-            for (let i = 0; i < Rnumeros; i++) {
-                var numero = Math.floor(Math.random() * 10000);
-                if (ArrayBoletosNoDisponible.includes(numero)) {
-                    i--;
-                } else {
-                    NmrosBoletos += numero + ', ';
-                }
-            }
-            NmrosBoletos = NmrosBoletos.substring(0, NmrosBoletos.length - 2);
-        }
+        NmrosBoletos = Nboletosgenerados;
+        
     }
 
     var mensaje = `Cédula: ${cedula}\nNombre: ${nombre}\nTeléfono: ${telefono}\nEstado: ${estado}\nCantidad de Boletos: ${boletos}\nNmros de Boletos: ${NmrosBoletos}\nForma de Pago: ${formadePago}`;
