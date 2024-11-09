@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../css/template.css">
     <link rel="stylesheet" href="../css/generales.css">
     <link rel="stylesheet" href="../css/Botones.css">
+    <link rel="stylesheet" href="../css/card2.css">
     <script src="../js/archivo.js"></script>
     <style>
         .days-btn-container {
@@ -131,6 +132,17 @@
                     web, teléfono, correo electrónico, SMS, entre otros.</p>
             </div>
         </div>
+        <div class="card2">
+            <span class="cardtitle2">Verifica tu ticket</span>
+            <p class="cardcontent2">Ingresa el numero de ticket y presiona el boton
+                'Verificar' para saber si tu ticket ha sido pagado.
+            </p>
+            <div class="card__form2">
+                <input placeholder="Numero de ticket" type="text" id="idboleto">
+                <button class="sign-up2" onclick="check()">Verificar</button>
+            </div>
+        </div>
+        <div id="resultado" class="resultado"></div>
     </main>
 
     <footer>

@@ -1,6 +1,6 @@
 
 let precioTicket = 5; // Precio por Ticket en $$
-const x = 1000; // Tickets Totales
+const x = 9999; // Tickets Totales
 let ArrayBoletosNoDisponible = [];
 const ArrayBoletosDisponible = Array.from({ length: x + 1 }, (_, i) => i.toString().padStart(4, '0'));
 
@@ -125,6 +125,16 @@ function minus() {
 
 }
 
+function check() {
+    var id = document.getElementById('idboleto').value;
+    const lc = document.getElementById('resultado');
+    if (ArrayBoletosNoDisponible.includes(id)) {
+        lc.innerHTML = '<h1>El Ticket esta pagado</h1>';
+    } else {
+        lc.innerHTML = '<h1>El Ticket no esta pagado</h1>';
+    }
+}
+
 function enviarWhatsApp() {
     var cedula = document.getElementById('cedula').value;
     var nombre = document.getElementById('nombre').value;
@@ -148,7 +158,7 @@ function enviarWhatsApp() {
             return;
         } else {
             for (let i = 0; i < Rnumeros; i++) {
-                var numero = Math.floor(Math.random() * 1000);
+                var numero = Math.floor(Math.random() * 10000);
                 if (ArrayBoletosNoDisponible.includes(numero)) {
                     i--;
                 } else {
