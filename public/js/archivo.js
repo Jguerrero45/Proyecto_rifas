@@ -135,10 +135,17 @@ function minus() {
 function check() {
     var id = document.getElementById('idboleto').value;
     const lc = document.getElementById('resultado');
+
+    // Verificar si el id contiene solo números y tiene exactamente 4 cifras
+    if (!/^\d{4}$/.test(id)) {
+        alert('Por favor, ingrese un número de boleto válido de 4 cifras.');
+        return;
+    }
+
     if (ArrayBoletosNoDisponible.includes(id)) {
-        lc.innerHTML = '<h1>El Ticket esta pagado</h1>';
+        lc.innerHTML = `<h1>El Ticket ${id} esta aprobado</h1>`;
     } else {
-        lc.innerHTML = '<h1>El Ticket no esta pagado</h1>';
+        lc.innerHTML = `<h1>No se encontro el Ticket ${id} como pagado</h1>`;
     }
 }
 
