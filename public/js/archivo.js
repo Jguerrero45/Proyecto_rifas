@@ -1,5 +1,5 @@
 
-let precioTicket = 5; // Precio por Ticket en $$
+let precioTicket = 0.5; // Precio por Ticket en $$
 const x = 9999; // Tickets Totales
 let ArrayBoletosNoDisponible = [];
 const ArrayBoletosDisponible = Array.from({ length: x + 1 }, (_, i) => i.toString().padStart(4, '0'));
@@ -95,13 +95,15 @@ function botonComprarPorSuerte() {
             <label class="numeros">total en &#128178;: </label>
             <label class="numeros" id="precio">0</label>
         </div>
+        <br><br>
+        <tr><tr>
         <p>Boletos seleccionados:</p>
         <div class="label_container_random" id="numeros_random">
         
             
         </div>
     `;
-    
+
 
     document.getElementById('minus').addEventListener('click', () => {
         let nmrosboletos = generateNmrosboletos();
@@ -188,7 +190,7 @@ function generateNmrosboletos() {
             if (ArrayBoletosNoDisponible.includes(numero)) {
                 i--;
             } else {
-                
+
                 numeros_random.innerHTML += `<label class="numeros2">${numero}</label>`;
                 nmrosboletos += numero + ', ';
             }
@@ -225,7 +227,7 @@ function enviarWhatsApp() {
         Nboletosgenerados = document.getElementById('numeros_random').textContent;
         boletos = document.getElementById('numeros').textContent;
         NmrosBoletos = Nboletosgenerados;
-        
+
     }
 
     var mensaje = `Cédula: ${cedula}\nNombre: ${nombre}\nTeléfono: ${telefono}\nEstado: ${estado}\nCantidad de Boletos: ${boletos}\nNmros de Boletos: ${NmrosBoletos}\nForma de Pago: ${formadePago}`;

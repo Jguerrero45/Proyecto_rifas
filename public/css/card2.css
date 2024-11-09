@@ -3,14 +3,14 @@
     text-align: center;
     align-items: center;
     justify-content: center;
-    background-color: #333;
+    background-color: #797878;
     margin-top: 3%;
     border-radius: 15px;
     height: 100%;
     width: 30%;
     font-size: 80%;
-    border: 1px solid #111;
-    box-shadow: 0px 1px 13px rgba(5, 218, 81, 0.6);
+    border: 2px solid #58bc82;
+    box-shadow: 0px 1px 13px rgba(5, 218, 81, 0.2);
     padding: 2%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: #dad6d6;
@@ -29,11 +29,13 @@
     justify-content: center;
     flex-direction: column;
     gap: 12px;
-    background: #e0dfdf;
+    background: #797878;
     border-radius: 20px;
     margin: 0 auto;
     margin-top: 3%;
-    color: #333;
+    color: #f0eeee;
+    border: 2px solid #58bc82;
+    box-shadow: 0px 1px 13px rgba(5, 218, 81, 0.2);
 }
 
 .card2>* {
@@ -61,11 +63,11 @@
 .card__form2 input {
     margin-top: 10px;
     outline: 0;
-    background: rgb(255, 255, 255);
+    background: rgb(207, 207, 207);
     box-shadow: transparent 0px 0px 0px 1px inset;
     padding: 0.6em;
     border-radius: 14px;
-    border: 1px solid #333;
+    border: 1px solid #58bc82;
     color: black;
 }
 

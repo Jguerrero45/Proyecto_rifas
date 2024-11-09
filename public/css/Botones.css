@@ -13,6 +13,7 @@
 .day-btn {
   display: none;
 }
+
 .numeros2 {
   font-size: 1.5rem;
   padding: 0.5rem;
@@ -82,6 +83,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+
 }
 
 .form input[type="text"],
@@ -101,6 +103,7 @@ main {
 
 .form select option {
   background-color: var(--bg-dark);
+
 }
 
 .form input[type="text"]:focus,
@@ -118,6 +121,7 @@ main {
 .span {
   text-decoration: none;
   color: var(--bg-dark);
+
 }
 
 .span a {
@@ -135,6 +139,7 @@ main {
   overflow: auto;
   background-color: rgb(0, 0, 0);
   background-color: rgba(0, 0, 0, 0.4);
+
 }
 
 .modal-content {
