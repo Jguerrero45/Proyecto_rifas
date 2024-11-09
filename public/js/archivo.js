@@ -29,7 +29,7 @@ function fetchBoletosNoDisponible() {
             console.log('data:', data);
             ArrayBoletosNoDisponible = data;
             console.log('Boletos No Disponibles:', ArrayBoletosNoDisponible);
-            //botonComprarPorNumero(); // Call the function to update the UI after fetching the data
+
         })
         .catch(error => console.error('Error fetching boletos:', error));
 }
@@ -37,28 +37,45 @@ function fetchBoletosNoDisponible() {
 function botonComprarPorNumero() {
     const container = document.querySelector('.days-btn-container');
     container.innerHTML = ``;
-    ArrayBoletosDisponible.forEach(boleto => {
-        if (ArrayBoletosNoDisponible.includes(boleto)) {
-            return; // Skip this boleto if it's in ArrayBoletosNoDisponible
-        }
-        const input = document.createElement('input');
-        input.className = 'day-btn';
-        input.id = boleto;
-        input.type = 'checkbox';
-        input.checked = false;
 
-        input.addEventListener('change', (event) => {
-            updateSelection(boleto, event.target.checked);
+    const searchInput = document.createElement('input');
+    searchInput.type = 'text';
+    searchInput.placeholder = 'Buscar boleto...';
+    searchInput.className = 'search-input';
+    container.appendChild(searchInput);
+
+
+    const mostrarBoletos = (filtro = '') => {
+        container.querySelectorAll('.day-btn, .day-label').forEach(el => el.remove());
+        ArrayBoletosDisponible.forEach(boleto => {
+            if (ArrayBoletosNoDisponible.includes(boleto) || !boleto.includes(filtro)) {
+                return;
+            }
+            const input = document.createElement('input');
+            input.className = 'day-btn';
+            input.id = boleto;
+            input.type = 'checkbox';
+            input.checked = false;
+
+            input.addEventListener('change', (event) => {
+                updateSelection(boleto, event.target.checked);
+            });
+
+            const label = document.createElement('label');
+            label.className = 'day-label';
+            label.htmlFor = boleto;
+            label.textContent = boleto;
+
+            container.appendChild(input);
+            container.appendChild(label);
         });
+    };
 
-        const label = document.createElement('label');
-        label.className = 'day-label';
-        label.htmlFor = boleto;
-        label.textContent = boleto;
-
-        container.appendChild(input);
-        container.appendChild(label);
+    mostrarBoletos();
+    searchInput.addEventListener('input', (event) => {
+        mostrarBoletos(event.target.value);
     });
+
     const button = document.getElementById('Numero');
     button.disabled = true;
     const button2 = document.getElementById('Suerte');
