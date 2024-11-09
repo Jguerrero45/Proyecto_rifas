@@ -110,7 +110,11 @@ function plus() {
     const label = document.getElementById('numeros');
     const precio = document.getElementById('precio');
     let currentValue = parseInt(label.textContent);
-    label.textContent = currentValue + 2;
+    if (currentValue === 0) {
+        label.textContent = currentValue + 2;
+    } else {
+        label.textContent = currentValue + 1;
+    }
     precio.textContent = label.textContent * precioTicket;
 }
 
@@ -118,12 +122,15 @@ function minus() {
     const label = document.getElementById('numeros');
     const precio = document.getElementById('precio');
     let currentValue = parseInt(label.textContent);
-    if (currentValue > 0) {
-        label.textContent = currentValue - 2;
-        precio.textContent = label.textContent * precioTicket;
+    if (currentValue === 2) {
+        label.textContent = 0;
+    } else if (currentValue > 0) {
+        label.textContent = currentValue - 1;
     }
-
+    precio.textContent = label.textContent * precioTicket;
 }
+
+
 
 function check() {
     var id = document.getElementById('idboleto').value;
@@ -144,8 +151,8 @@ function enviarWhatsApp() {
     var boletos = 0;
     var NmrosBoletos = '';
     if (selecting) {
-        if (selectedCount === 0 || selectedCount % 2 !== 0) {
-            alert('Debe seleccionar minimo de 2 numeros y unicamente en numeros pares (2, 4, 6, 8, 10, etc.)');
+        if (selectedCount < 2) {
+            alert('Debe seleccionar un mínimo de 2 números.');
             return;
         }
         boletos = selectedCount;
@@ -153,8 +160,8 @@ function enviarWhatsApp() {
     } else if (!selecting) {
         boletos = document.getElementById('numeros').textContent;
         var Rnumeros = parseInt(boletos);
-        if (Rnumeros === 0) {
-            alert('Debe seleccionar minimo de 2 numeros y unicamente en numeros pares (2, 4, 6, 8, 10, etc.)');
+        if (Rnumeros < 2) {
+            alert('Debe seleccionar un mínimo de 2 números.');
             return;
         } else {
             for (let i = 0; i < Rnumeros; i++) {
