@@ -3,12 +3,17 @@
     text-align: center;
     align-items: center;
     justify-content: center;
-    background-color: #070707;
+    background-color: #333;
     margin-top: 3%;
     border-radius: 15px;
     height: 100%;
     width: 30%;
     font-size: 80%;
+    border: 1px solid #111;
+    box-shadow: 0px 1px 13px rgba(5, 218, 81, 0.6);
+    padding: 2%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
 }
 
 
@@ -65,4 +70,11 @@
 
 .sign-up:hover {
     opacity: 0.8;
+}
+
+@media (max-width: 425px) {
+    .resultado {
+        width: 80%;
+        margin-top: 10%;
+    }
 }
