@@ -157,6 +157,13 @@ function enviarWhatsApp() {
     var formadePago = document.getElementById('pago').value;
     var boletos = 0;
     var NmrosBoletos = '';
+
+    // Verificar si todos los campos están llenos
+    if (!cedula || !nombre || !telefono || !estado || !formadePago) {
+        alert('Por favor, complete todos los campos obligatorios.');
+        return;
+    }
+
     if (selecting) {
         if (selectedCount < 2) {
             alert('Debe seleccionar un mínimo de 2 números.');
@@ -182,7 +189,6 @@ function enviarWhatsApp() {
             NmrosBoletos = NmrosBoletos.substring(0, NmrosBoletos.length - 2);
         }
     }
-
 
     var mensaje = `Cédula: ${cedula}\nNombre: ${nombre}\nTeléfono: ${telefono}\nEstado: ${estado}\nCantidad de Boletos: ${boletos}\nNmros de Boletos: ${NmrosBoletos}\nForma de Pago: ${formadePago}`;
     var mensajeCodificado = encodeURIComponent(mensaje);
