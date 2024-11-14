@@ -1,5 +1,5 @@
 
-let precioTicket = 5; // Precio por Ticket en $$
+let precioTicket = 0.5; // Precio por Ticket en $$
 const x = 9999; // Tickets Totales
 let ArrayBoletosNoDisponible = [];
 const ArrayBoletosDisponible = Array.from({ length: x + 1 }, (_, i) => i.toString().padStart(4, '0'));
@@ -29,36 +29,65 @@ function fetchBoletosNoDisponible() {
             console.log('data:', data);
             ArrayBoletosNoDisponible = data;
             console.log('Boletos No Disponibles:', ArrayBoletosNoDisponible);
-            //botonComprarPorNumero(); // Call the function to update the UI after fetching the data
+
         })
         .catch(error => console.error('Error fetching boletos:', error));
 }
 
 function botonComprarPorNumero() {
     const container = document.querySelector('.days-btn-container');
-    container.innerHTML = ``;
-    ArrayBoletosDisponible.forEach(boleto => {
-        if (ArrayBoletosNoDisponible.includes(boleto)) {
-            return; // Skip this boleto if it's in ArrayBoletosNoDisponible
-        }
-        const input = document.createElement('input');
-        input.className = 'day-btn';
-        input.id = boleto;
-        input.type = 'checkbox';
-        input.checked = false;
+    container.innerHTML = `
+        <form class="form">
+            <div>
+                <div class="form-row">
+                    <span class="input-span">
+                        <label for="buscar" class="label">Buscar boleto</label>
+                        <input type="text" name="buscar" id="buscar" class="search-input" placeholder="Buscar boleto...">
+                    </span>
+                </div>
+            </div>
+        </form>
+    `;
 
-        input.addEventListener('change', (event) => {
-            updateSelection(boleto, event.target.checked);
+    const searchInput = container.querySelector('.search-input');
+    const selectedBoletos = new Set();
+
+    const mostrarBoletos = (filtro = '') => {
+        container.querySelectorAll('.day-btn, .day-label').forEach(el => el.remove());
+        ArrayBoletosDisponible.forEach(boleto => {
+            if (ArrayBoletosNoDisponible.includes(boleto) || !boleto.includes(filtro)) {
+                return;
+            }
+            const input = document.createElement('input');
+            input.className = 'day-btn';
+            input.id = boleto;
+            input.type = 'checkbox';
+            input.checked = selectedBoletos.has(boleto);
+
+            input.addEventListener('change', (event) => {
+                if (event.target.checked) {
+                    selectedBoletos.add(boleto);
+                } else {
+                    selectedBoletos.delete(boleto);
+                }
+                updateSelection(boleto, event.target.checked);
+            });
+
+            const label = document.createElement('label');
+            label.className = 'day-label';
+            label.htmlFor = boleto;
+            label.textContent = boleto;
+
+            container.appendChild(input);
+            container.appendChild(label);
         });
+    };
 
-        const label = document.createElement('label');
-        label.className = 'day-label';
-        label.htmlFor = boleto;
-        label.textContent = boleto;
-
-        container.appendChild(input);
-        container.appendChild(label);
+    mostrarBoletos();
+    searchInput.addEventListener('input', (event) => {
+        mostrarBoletos(event.target.value);
     });
+
     const button = document.getElementById('Numero');
     button.disabled = true;
     const button2 = document.getElementById('Suerte');
@@ -96,13 +125,15 @@ function botonComprarPorSuerte() {
             <label class="numeros">total en &#128178;: </label>
             <label class="numeros" id="precio">0</label>
         </div>
+        <br><br>
+        <tr><tr>
         <p>Boletos seleccionados:</p>
         <div class="label_container_random" id="numeros_random">
         
             
         </div>
     `;
-    
+
 
     document.getElementById('minus').addEventListener('click', () => {
         let nmrosboletos = generateNmrosboletos();
@@ -189,7 +220,7 @@ function generateNmrosboletos() {
             if (ArrayBoletosNoDisponible.includes(numero)) {
                 i--;
             } else {
-                
+
                 numeros_random.innerHTML += `<label class="numeros2">${numero}</label>`;
                 nmrosboletos += numero + ', ';
             }
@@ -226,7 +257,7 @@ function enviarWhatsApp() {
         Nboletosgenerados = document.getElementById('numeros_random').textContent;
         boletos = document.getElementById('numeros').textContent;
         NmrosBoletos = Nboletosgenerados;
-        
+
     }
 
     var mensaje = `Cédula: ${cedula}\nNombre: ${nombre}\nTeléfono: ${telefono}\nEstado: ${estado}\nCantidad de Boletos: ${boletos}\nNmros de Boletos: ${NmrosBoletos}\nForma de Pago: ${formadePago}`;
