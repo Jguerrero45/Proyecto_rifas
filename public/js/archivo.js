@@ -66,6 +66,7 @@ function botonComprarPorNumero() {
     selecting = true;
 }
 
+
 function botonComprarPorSuerte() {
     const container = document.querySelector('.days-btn-container');
     container.innerHTML = `

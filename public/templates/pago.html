@@ -109,11 +109,18 @@
                 </span>
                 <span class="input-span">
                     <label for="pago" class="label">Forma de pago *</label>
-                    <select name="pago" id="pago">
+                    <select name="pago" id="pago-select">
                         <option value="Pago movil">Pago Movil</option>
                         <option value="Efectivo">Efectivo</option>
                         <option value="Zelle">Zelle</option>
                     </select>
+                </span>
+            </div>
+            <div class="form-row">
+                <span class="input-span" id="pago-span">
+                    <label class="label">Banco:  xxx.</label>
+                    <label class="label">Telf: 04xx-xxxxxxx.</label>
+                    <label class="label">Rif: J-xxxxxxxx-x.</label>
                 </span>
             </div>
             <span class="span">Al enviar al WhatsApp autorizo el uso de<a href="#"> mis datos personales</a></span>
@@ -187,6 +194,7 @@
     <script src="https://kit.fontawesome.com/003123b854.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script type="module" src="../js/prueba.js"></script>
+    <script src="../js/pagos.js"></script>
 </body>
 
 </html>
